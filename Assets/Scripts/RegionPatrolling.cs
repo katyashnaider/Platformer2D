@@ -10,6 +10,7 @@ public class RegionPatrolling : MonoBehaviour
 
     private Transform[] _points;
 
+    private float _permissibleDistance = 0.2f;
     private int _currentPoint;
     private bool _isFacingRight = true;
 
@@ -34,7 +35,7 @@ public class RegionPatrolling : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, target.position, _speed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, target.position) < 0.2f)
+        if (Vector2.Distance(transform.position, target.position) < _permissibleDistance)
         {
             _currentPoint++;
 

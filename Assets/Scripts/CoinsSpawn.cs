@@ -22,7 +22,5 @@ public class CoinsSpawn : MonoBehaviour
 
             yield return _coin;
         }
-
-        StopCoroutine(_coroutine);
     }
 }
